@@ -10,12 +10,26 @@ public class startActivity extends AppCompatActivity {
 
     private Button mRegBtn;
 
+    private Button mLoginBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
         mRegBtn = (Button)findViewById(R.id.start_reg_btn);
+
+        mLoginBtn = (Button)findViewById(R.id.start_login_btn);
+
+        mLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent LoginIntent = new Intent(startActivity.this , Login_Activity.class);
+                startActivity(LoginIntent);
+
+            }
+        });
 
         mRegBtn.setOnClickListener(new View.OnClickListener() {
             @Override
